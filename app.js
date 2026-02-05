@@ -10,12 +10,16 @@ const cors = require('cors');
 const path = require("path");
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 5000;
 
 app.use(cors({
-    origin: ['http://localhost:3000','vercel link', , 'https://192.168.0.114'],
+    origin: [
+        "http://localhost:3000",
+        "https://sports-world-9cbu.vercel.app"
+    ],
     credentials: true
-}))
+}));
+
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
